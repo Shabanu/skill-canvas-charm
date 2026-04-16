@@ -141,7 +141,7 @@ function Index() {
           transition={{ duration: 0.8 }}
           className="pt-8 text-center"
         >
-          <p className="text-2xl font-semibold text-foreground" style={{ fontFamily: "var(--font-display)" }}>
+          <p className="text-2xl font-semibold text-old-pink" style={{ fontFamily: "var(--font-display)" }}>
             "Every line of code is a step closer to the creator I'm becoming."
           </p>
           <p className="mt-3 text-sm text-muted-foreground">— Shabanu Aliahmad</p>
