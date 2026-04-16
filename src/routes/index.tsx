@@ -53,7 +53,7 @@ function Index() {
             <p className="mb-3 text-sm font-medium uppercase tracking-widest text-muted-foreground">
               Skill Growth Tracker
             </p>
-            <h1 className="text-4xl font-bold leading-tight text-foreground md:text-5xl lg:text-6xl">
+            <h1 className="text-4xl font-bold leading-tight text-old-pink md:text-5xl lg:text-6xl">
               Shabanu Aliahmad
             </h1>
             <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
