@@ -14,10 +14,10 @@ export function SectionCard({ title, icon, children, delay = 0 }: SectionCardPro
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay }}
-      className="rounded-2xl border border-border bg-card p-6 md:p-8 shadow-sm"
+      className="group rounded-2xl border border-border bg-card p-6 md:p-8 shadow-sm transition-all duration-300 hover:shadow-xl hover:border-primary/40"
     >
       <div className="mb-5 flex items-center gap-3">
-        <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent text-lg">
+        <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent text-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6 hover:!scale-125 hover:!rotate-12 cursor-default">
           {icon}
         </span>
         <h2 className="text-xl font-semibold text-foreground">{title}</h2>
