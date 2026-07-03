@@ -40,6 +40,7 @@ export const Route = createRootRoute({
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b2190210-689a-4d0d-8bf5-55f3ab5ab8c6/id-preview-89105545--1fe2e4cc-c938-41cc-9cdc-0ee6d4be8bc8.lovable.app-1776365333061.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b2190210-689a-4d0d-8bf5-55f3ab5ab8c6/id-preview-89105545--1fe2e4cc-c938-41cc-9cdc-0ee6d4be8bc8.lovable.app-1776365333061.png" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "google-site-verification", content: "3tpD_LPfgPpnOv1dgneR4h024hf-PVPz04EQGCOtY00" },
     ],
     links: [
       { rel: "icon", type: "image/png", href: "/favicon.png" },
