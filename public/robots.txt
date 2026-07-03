@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://skill-canvas-charm.lovable.app/sitemap.xml
