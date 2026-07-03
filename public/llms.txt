@@ -1,0 +1,18 @@
+# Shabanu Aliahmad — Skill Growth Tracker
+
+> Personal skill growth tracker for Shabanu Aliahmad — a learning programmer, coder, and website creator. Tracks current skills, learning goals, and progress over time.
+
+## About
+- Owner: Shabanu Aliahmad
+- Focus: programming, web development, creative storytelling
+- Languages: HTML, CSS, JavaScript, Python, Java
+- Tools: Canva, website builders
+
+## Sections
+- What I'm Good At — top strengths
+- My Skills — live progress bars (auto-increment twice weekly)
+- What I Want to Learn — UI/UX Design, AI Tools, Advanced AI
+- 1-Year Goal — AI mastery, visual storytelling, writing
+
+## Links
+- Home: https://skill-canvas-charm.lovable.app/
