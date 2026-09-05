@@ -4,10 +4,13 @@ import { SkillBar } from "../components/SkillBar";
 import { SkillTag } from "../components/SkillTag";
 import { SectionCard } from "../components/SectionCard";
 import { ThemeToggle } from "../components/ThemeToggle";
+import { LanguageToggle } from "../components/LanguageToggle";
+import { SkillWeaver } from "../components/SkillWeaver";
+import { LanguageProvider, useLanguage } from "../lib/i18n";
 import heroBg from "../assets/hero-bg.jpg";
 
 export const Route = createFileRoute("/")({
-  component: Index,
+  component: IndexPage,
   head: () => ({
     meta: [
       { title: "Shabanu Aliahmad — Skill Growth Tracker" },
@@ -16,6 +19,14 @@ export const Route = createFileRoute("/")({
         content:
           "Personal skill growth tracker for Shabanu Aliahmad — programmer, coder, and creative storyteller.",
       },
+      { property: "og:title", content: "Shabanu Aliahmad — Skill Growth Tracker" },
+      {
+        property: "og:description",
+        content:
+          "Live skill tracking, learning goals and the Lovelace Skill Weaver — in English and Dutch.",
+      },
+      { property: "og:type", content: "profile" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     scripts: [
       {
@@ -34,6 +45,7 @@ export const Route = createFileRoute("/")({
             "Python",
             "Java",
             "Canva",
+            "Vibe Coding",
             "Website Creation",
             "UI/UX Design",
             "AI Tools",
@@ -47,7 +59,6 @@ export const Route = createFileRoute("/")({
 const languages = ["HTML", "CSS", "JavaScript", "Python", "Java"];
 
 // Skills auto-progress: +1% twice per week (every ~3.5 days), capped at 100%.
-// Anchor date is when the tracker was set up; adjust as time passes.
 const START_DATE = new Date("2026-07-03T00:00:00Z").getTime();
 const HALF_WEEK_MS = 3.5 * 24 * 60 * 60 * 1000;
 
@@ -59,6 +70,7 @@ function computeLevel(startLevel: number): number {
 
 const skills = [
   { name: "Coding", startLevel: 72 },
+  { name: "Vibe Coding", startLevel: 58 },
   { name: "Creating Stories", startLevel: 65 },
   { name: "Designing", startLevel: 60 },
   { name: "Canva", startLevel: 80 },
@@ -66,18 +78,32 @@ const skills = [
 ];
 
 const learningGoals = [
-  { icon: "🎨", label: "UI / UX Design", desc: "Crafting beautiful, user-centred interfaces" },
-  { icon: "🤖", label: "AI Tools", desc: "Exploring artificial intelligence platforms" },
-  { icon: "🧠", label: "Advanced AI Skills", desc: "Building deeper AI expertise" },
+  { icon: "🎨", label: "UI / UX Design" },
+  { icon: "🤖", label: "AI Tools" },
+  { icon: "🧠", label: "Advanced AI Skills" },
 ];
 
 const iconHover =
   "inline-block transition-transform duration-300 hover:scale-125 hover:-rotate-6 cursor-default";
 
+function IndexPage() {
+  return (
+    <LanguageProvider>
+      <Index />
+    </LanguageProvider>
+  );
+}
+
 function Index() {
+  const { t } = useLanguage();
+
   return (
     <div className="min-h-screen bg-background transition-colors duration-500">
-      <ThemeToggle />
+      <nav className="fixed right-4 top-4 z-50 flex items-center gap-2">
+        <LanguageToggle />
+        <ThemeToggle />
+      </nav>
+
       <main>
         {/* Hero */}
         <section className="relative overflow-hidden">
@@ -96,14 +122,12 @@ function Index() {
               transition={{ duration: 0.7 }}
             >
               <p className="mb-3 text-sm font-medium uppercase tracking-widest text-muted-foreground">
-                Skill Growth Tracker
+                {t.kicker}
               </p>
               <h1 className="text-4xl font-bold leading-tight text-old-pink md:text-5xl lg:text-6xl">
-                Shabanu Aliahmad — Skill Growth Tracker
+                {t.heading}
               </h1>
-              <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
-                Learning professional programmer, coder &amp; website creator — fuelled by curiosity and a love for elegant design.
-              </p>
+              <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">{t.intro}</p>
             </motion.div>
 
             <motion.div
@@ -121,40 +145,36 @@ function Index() {
 
         {/* Main content */}
         <div className="mx-auto max-w-4xl space-y-8 px-6 pb-24">
-          <SectionCard title="What I'm Good At" icon="✨" delay={0.1}>
+          <SectionCard title={t.goodAt} icon="✨" delay={0.1}>
             <ul className="space-y-2 text-foreground">
-              <li className="flex items-start gap-2">
-                <span className={`mt-1 text-primary ${iconHover}`}>▸</span>
-                I love learning languages — HTML, CSS, JavaScript, Python &amp; Java
-              </li>
-              <li className="flex items-start gap-2">
-                <span className={`mt-1 text-primary ${iconHover}`}>▸</span>
-                Quite skilled in Canva for visual storytelling
-              </li>
-              <li className="flex items-start gap-2">
-                <span className={`mt-1 text-primary ${iconHover}`}>▸</span>
-                I enjoy creating websites from scratch
-              </li>
+              {[t.goodAt1, t.goodAt2, t.goodAt3].map((line) => (
+                <li key={line} className="flex items-start gap-2">
+                  <span className={`mt-1 text-primary ${iconHover}`}>▸</span>
+                  {line}
+                </li>
+              ))}
             </ul>
           </SectionCard>
 
-          <SectionCard title="My Skills" icon="📊" delay={0.2}>
+          <SectionCard title={t.mySkills} icon="📊" delay={0.2}>
             <div className="space-y-4">
               {skills.map((skill, i) => (
                 <SkillBar
                   key={skill.name}
-                  name={skill.name}
+                  name={t.skills[skill.name] ?? skill.name}
                   level={computeLevel(skill.startLevel)}
                   delay={0.15 * i}
                 />
               ))}
             </div>
-            <p className="mt-4 text-xs text-muted-foreground">
-              Auto-tracks growth: +1% twice a week until 100%.
-            </p>
+            <p className="mt-4 text-xs text-muted-foreground">{t.autoTrack}</p>
           </SectionCard>
 
-          <SectionCard title="What I Want to Learn" icon="🚀" delay={0.3}>
+          <SectionCard title={t.weaverTitle} icon="🧵" delay={0.25}>
+            <SkillWeaver />
+          </SectionCard>
+
+          <SectionCard title={t.wantToLearn} icon="🚀" delay={0.3}>
             <div className="grid gap-4 sm:grid-cols-3">
               {learningGoals.map((goal, i) => (
                 <motion.div
@@ -168,18 +188,20 @@ function Index() {
                   <span className="inline-block text-3xl transition-transform duration-300 group-hover:scale-125 group-hover:rotate-12">
                     {goal.icon}
                   </span>
-                  <h3 className="mt-3 font-semibold text-foreground">{goal.label}</h3>
-                  <p className="mt-1 text-sm text-muted-foreground">{goal.desc}</p>
+                  <h3 className="mt-3 font-semibold text-foreground">
+                    {t.goals[goal.label] ?? goal.label}
+                  </h3>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    {t.goalDesc[goal.label] ?? ""}
+                  </p>
                 </motion.div>
               ))}
             </div>
           </SectionCard>
 
-          <SectionCard title="Where I Want to Be in 1 Year" icon="🎯" delay={0.4}>
+          <SectionCard title={t.oneYear} icon="🎯" delay={0.4}>
             <div className="rounded-xl bg-accent/50 p-6">
-              <p className="text-foreground leading-relaxed">
-                In one year I want to <strong>develop my AI skills</strong> and master new tools — it's both my passion and my hobby. I'd love to <strong>create visual stories</strong> that captivate people, and take my <strong>writing</strong> to the next level. The journey of learning never stops, and that's what makes it exciting.
-              </p>
+              <p className="text-foreground leading-relaxed">{t.oneYearBody}</p>
             </div>
           </SectionCard>
 
@@ -194,7 +216,7 @@ function Index() {
               className="text-2xl font-semibold text-old-pink"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              "Every line of code is a step closer to the creator I'm becoming."
+              {t.quote}
             </p>
             <p className="mt-3 text-sm text-muted-foreground">— Shabanu Aliahmad</p>
           </motion.div>
