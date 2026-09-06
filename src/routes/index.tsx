@@ -147,7 +147,7 @@ function Index() {
         <div className="mx-auto max-w-4xl space-y-8 px-6 pb-24">
           <SectionCard title={t.goodAt} icon="✨" delay={0.1}>
             <ul className="space-y-2 text-foreground">
-              {[t.goodAt1, t.goodAt2, t.goodAt3].map((line) => (
+              {[t.goodAt1, t.goodAt2, t.goodAt3, t.goodAt4, t.goodAt5].map((line) => (
                 <li key={line} className="flex items-start gap-2">
                   <span className={`mt-1 text-primary ${iconHover}`}>▸</span>
                   {line}

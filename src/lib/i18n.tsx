@@ -11,7 +11,9 @@ export const translations = {
     goodAt: "What I'm Good At",
     goodAt1: "I love learning languages — HTML, CSS, JavaScript, Python & Java",
     goodAt2: "Quite skilled in Canva for visual storytelling",
-    goodAt3: "I enjoy creating websites from scratch",
+    goodAt3: "I enjoy creating websites, web mini-games and other projects from scratch",
+    goodAt4: "Vibe Coding is my favorite skill and (Gen) A.I. is my favorite technology",
+    goodAt5: "Writing my own story in Episode Interactive is one of my hobbies",
     mySkills: "My Skills",
     autoTrack: "Auto-tracks growth: +1% twice a week until 100%.",
     wantToLearn: "What I Want to Learn",
@@ -19,7 +21,7 @@ export const translations = {
     oneYearBody:
       "In one year I want to develop my AI skills and master new tools — it's both my passion and my hobby. I'd love to create visual stories that captivate people, and take my writing to the next level. The journey of learning never stops, and that's what makes it exciting.",
     quote: "\"Every line of code is a step closer to the creator I'm becoming.\"",
-    weaverTitle: "The Skill Weaver Matrix",
+    weaverTitle: "The Lovelace Skill Weaver",
     weaverIntro:
       "Pick the skills you already have, connect them to a learning goal, and weave a brand-new project idea.",
     currentSkills: "Current Skills",
@@ -63,7 +65,9 @@ export const translations = {
     goodAt: "Waar ik goed in ben",
     goodAt1: "Ik hou van talen leren — HTML, CSS, JavaScript, Python & Java",
     goodAt2: "Behoorlijk vaardig in Canva voor visuele verhalen",
-    goodAt3: "Ik maak graag websites vanaf nul",
+    goodAt3: "Ik maak graag websites, web-mini-games en andere projecten vanaf nul",
+    goodAt4: "Vibe Coding is mijn favoriete vaardigheid en (Gen) A.I. is mijn favoriete technologie",
+    goodAt5: "Mijn eigen verhaal schrijven in Episode Interactive is een van mijn hobby's",
     mySkills: "Mijn vaardigheden",
     autoTrack: "Volgt automatisch groei: +1% twee keer per week tot 100%.",
     wantToLearn: "Wat ik wil leren",
@@ -71,7 +75,7 @@ export const translations = {
     oneYearBody:
       "Over een jaar wil ik mijn AI-vaardigheden ontwikkelen en nieuwe tools beheersen — het is mijn passie én mijn hobby. Ik zou graag visuele verhalen maken die mensen raken, en mijn schrijven naar een hoger niveau tillen. Leren houdt nooit op, en dat maakt het juist spannend.",
     quote: "\"Elke regel code is een stap dichter bij de maker die ik aan het worden ben.\"",
-    weaverTitle: "De Skill Weaver Matrix",
+    weaverTitle: "The Lovelace Skill Weaver",
     weaverIntro:
       "Kies de vaardigheden die je al hebt, verbind ze met een leerdoel en weef een gloednieuw projectidee.",
     currentSkills: "Huidige vaardigheden",
