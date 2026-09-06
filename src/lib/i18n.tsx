@@ -30,6 +30,11 @@ export const translations = {
     weavedProjects: "My Weaved Projects",
     emptyProjects: "No woven projects yet — select some skills and weave your first idea.",
     selectHint: "Select at least one skill and one goal.",
+    showcaseTitle: "My Vibe Coding Projects",
+    showcaseIntro:
+      "A showcase of my completed vibe coding projects — woven in the Skill Weaver and built for real.",
+    showcaseEmpty:
+      "No completed projects yet — weave an idea above, mark it Completed, and it will shine here.",
     statusIdea: "Idea",
     statusProgress: "In Progress",
     statusDone: "Completed",
@@ -84,6 +89,11 @@ export const translations = {
     weavedProjects: "Mijn Geweven Projecten",
     emptyProjects: "Nog geen geweven projecten — kies vaardigheden en weef je eerste idee.",
     selectHint: "Kies minstens één vaardigheid en één doel.",
+    showcaseTitle: "Mijn Vibe Coding Projecten",
+    showcaseIntro:
+      "Een showcase van mijn afgeronde vibe coding projecten — geweven in de Skill Weaver en echt gebouwd.",
+    showcaseEmpty:
+      "Nog geen afgeronde projecten — weef hierboven een idee, zet het op Afgerond, en het verschijnt hier.",
     statusIdea: "Idee",
     statusProgress: "Mee bezig",
     statusDone: "Afgerond",

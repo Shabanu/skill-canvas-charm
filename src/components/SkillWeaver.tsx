@@ -2,24 +2,16 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Sparkles, X } from "lucide-react";
 import { useLanguage } from "../lib/i18n";
+import { useWeavedProjects, type Project, type Status } from "../lib/weavedProjects";
 
 const SKILLS = ["Coding", "Vibe Coding", "Canva", "Designing", "Creating Stories", "Website Creation"];
 const GOALS = ["UI / UX Design", "AI Tools", "Advanced AI Skills"];
-
-type Status = "idea" | "progress" | "done";
-
-interface Project {
-  id: number;
-  skills: string[];
-  goal: string;
-  status: Status;
-}
 
 export function SkillWeaver() {
   const { t } = useLanguage();
   const [selected, setSelected] = useState<string[]>([]);
   const [goal, setGoal] = useState<string | null>(null);
-  const [projects, setProjects] = useState<Project[]>([]);
+  const [projects, setProjects] = useWeavedProjects();
 
   const toggleSkill = (s: string) =>
     setSelected((prev) => (prev.includes(s) ? prev.filter((x) => x !== s) : [...prev, s]));
