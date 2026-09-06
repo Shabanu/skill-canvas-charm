@@ -51,9 +51,9 @@ export const translations = {
       "Advanced AI Skills": "Building deeper AI expertise",
     } as Record<string, string>,
     weave: (skills: string[], goal: string) =>
-      `Build a ${goal} project that combines ${skills.join(" + ")} — use ${skills[0]} as the engine, ${
-        skills[1] ?? skills[0]
-      } for the creative layer, and ${goal} to make it smart and future-proof.`,
+      skills.length > 1
+        ? `Build a ${goal} project that combines ${skills.join(" + ")} — use ${skills[0]} as the engine, ${skills[1]} for the creative layer, and ${goal} to make it smart and future-proof.`
+        : `Build a ${goal} project powered by ${skills[0]} — let ${skills[0]} carry the craft while ${goal} makes it smart and future-proof.`,
   },
   nl: {
     kicker: "Vaardigheidsgroei Tracker",
@@ -103,9 +103,9 @@ export const translations = {
       "Advanced AI Skills": "Diepere AI-expertise opbouwen",
     } as Record<string, string>,
     weave: (skills: string[], goal: string) =>
-      `Bouw een ${goal}-project dat ${skills.join(" + ")} combineert — gebruik ${skills[0]} als motor, ${
-        skills[1] ?? skills[0]
-      } voor de creatieve laag en ${goal} om het slim en toekomstbestendig te maken.`,
+      skills.length > 1
+        ? `Bouw een ${goal}-project dat ${skills.join(" + ")} combineert — gebruik ${skills[0]} als motor, ${skills[1]} voor de creatieve laag en ${goal} om het slim en toekomstbestendig te maken.`
+        : `Bouw een ${goal}-project op basis van ${skills[0]} — laat ${skills[0]} het vakmanschap dragen en ${goal} het slim en toekomstbestendig maken.`,
   },
 } as const;
 
